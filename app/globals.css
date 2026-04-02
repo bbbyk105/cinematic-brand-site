@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  /* Dark theme fixed - デザイントークン */
+  --background: #0a0a0a;
+  --foreground: #f2f2f2;
+  --card: #141414;
+  --border: #2a2a2a;
+  --text-1: #f2f2f2;
+  --text-2: #6b6b6b;
+  --accent: #5e6ad2;
+  --gradient-from: #0066ff;
+  --gradient-to: #8833ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-text-1: var(--text-1);
+  --color-text-2: var(--text-2);
+  --color-accent: var(--accent);
+  --color-gradient-from: var(--gradient-from);
+  --color-gradient-to: var(--gradient-to);
+  --font-inter: var(--font-inter);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  line-height: 1.5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* GSAP ScrollTrigger対応 */
+.gsap-marker {
+  display: none !important;
+}
+
+/* 3D Ring Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 15s linear infinite;
+}
